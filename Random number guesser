@@ -1,0 +1,16 @@
+#Guess a random number
+
+import random
+number = random.randint(0,100)
+running = True
+turns = 1
+guess = int(input("Guess a number between 1 and 100")
+while running = True:
+    if guess == number:
+        print("Well done you guessed the number in",turns,"turns")
+        running = False
+    elif guess > number:
+        guess = int(input("Too high Guess again")
+    else:
+        guess = int(input("Too low Guess again")
+    turns =+ 1

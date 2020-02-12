@@ -1,0 +1,12 @@
+story = ["Today I went to the zoo. I saw a","jumping up and down in its tree. He","Through the large tunnel that led to its",". I got some peanuts and passed them through the cage to a giagantic grey","towering above my head. Feeding the animal made me hungry. I went to get a ","scoop of ice cream. It filled my stomach. Afterwards I had to "," to catch a bus.When I got home I ", " my mum for a ", "day at the zoo"]
+words = ["Adjective and noun","verb and adverb","noun","noun","adjective","verb and adverb","verb past tense","adjective"]
+
+for i in range(0, len(words)):
+    print("Enter a")   
+    word = input(words[i])
+    words[i] = word
+
+for i in range (0, len(words)):
+    print (story[i])
+    print (words[i])
+print(story[8])

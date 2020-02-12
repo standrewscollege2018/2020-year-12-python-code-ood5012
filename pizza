@@ -1,0 +1,9 @@
+pizzas = ["Hawaiian", "Cheese","Pepperoni"]
+for i in range(0,len(pizzas)):
+    print(i+1,pizzas(i))
+choice = int(input("Your choice"))
+choice = choice-1
+change = input("New name?")
+change = pizza(choice)
+for i in range(0,len(pizzas)):
+    print(i+1,pizzas(i))

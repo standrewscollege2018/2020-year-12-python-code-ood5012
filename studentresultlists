@@ -1,0 +1,36 @@
+#This programme can store and display student results
+#Oliver Odlin
+#11/2/20
+
+#list for students
+students = ["Lucas Kerry","Ollie Odlin","Zac Moore","Liam Blackmore","Jack Tansey"]
+#Prints names of students
+running = True
+while running == True:
+    for student in range(0, len(students)):
+        print(student+1, students[student])
+#Adding or deleting a student to the list
+    print('''1. Add
+2. Delete
+3. Change student details
+4. Stop running''')
+    choice = int(input("Choose 1, 2, 3 or 4"))
+    if choice == 1:
+        newStudent = input("Who is the student you would like to add")
+        students.append(newStudent)
+    elif choice == 2:
+        deleteStudent = int(input("Which student would you like to delete(Use student number)"))
+        if deleteStudent <= len(students)+1:
+            del students[deleteStudent-1]
+        else:
+            print("Choose a valid student number")
+    elif choice == 3:
+        changeStudent = int(input("What student do you want to change?"))
+        studentNameChange = input("What is the new name of the student?")
+        
+    elif choice == 4:
+        running = False
+    else:
+        print("Choose a valid option")
+for student in range(0, len(students)):
+        print(student+1, students[student])
