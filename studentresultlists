@@ -3,13 +3,15 @@
 #11/2/20
 
 #list for students
+def displayStudents():
+    for i in range (0, len(students)):
+        print(i+1, students[i],"Credits:",creditTotal[i])
 students = ["Lucas Kerry","Ollie Odlin","Zac Moore","Liam Blackmore","Jack Tansey"]
 creditTotal = [34,45,87,23,76]
 #Prints names of students
 running = True
 while running == True:
-    for student in range(0, len(students)):
-        print(student+1, students[student],creditTotal[student])
+    displayStudents()
 #Adding or deleting a student to the list
     print('''Menu
 1. Add
@@ -37,10 +39,9 @@ while running == True:
     elif choice == 4:
         changeStudent = int(input("What student do you want to change?(Use student number)"))
         studentCreditChange = int(input("What is the new credit total of the student?"))
-        students[changeStudent-1] = studentCreditChange
+        creditTotal[changeStudent-1] = studentCreditChange
     elif choice == 5:
         running = False
     else:
         print("Choose a valid option")
-for student in range(0, len(students)):
-        print(student+1, students[student])
+displayStudents()
