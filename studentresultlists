@@ -4,31 +4,41 @@
 
 #list for students
 students = ["Lucas Kerry","Ollie Odlin","Zac Moore","Liam Blackmore","Jack Tansey"]
+creditTotal = [34,45,87,23,76]
 #Prints names of students
 running = True
 while running == True:
     for student in range(0, len(students)):
-        print(student+1, students[student])
+        print(student+1, students[student],creditTotal[student])
 #Adding or deleting a student to the list
-    print('''1. Add
+    print('''Menu
+1. Add
 2. Delete
-3. Change student details
-4. Stop running''')
-    choice = int(input("Choose 1, 2, 3 or 4"))
+3. Change student name
+4. Change student credit
+5. Stop running''')
+    choice = int(input("Choose 1, 2, 3, 4 or 5"))
     if choice == 1:
         newStudent = input("Who is the student you would like to add")
+        newCredit = int(input("How many credits does this student have?"))
         students.append(newStudent)
+        creditTotal.append(newCredit)
     elif choice == 2:
         deleteStudent = int(input("Which student would you like to delete(Use student number)"))
         if deleteStudent <= len(students)+1:
             del students[deleteStudent-1]
+            del creditTotal[deleteStudent-1]
         else:
             print("Choose a valid student number")
     elif choice == 3:
-        changeStudent = int(input("What student do you want to change?"))
+        changeStudent = int(input("What student do you want to change?(Use student number)"))
         studentNameChange = input("What is the new name of the student?")
-        
+        students[changeStudent-1] = studentNameChange
     elif choice == 4:
+        changeStudent = int(input("What student do you want to change?(Use student number)"))
+        studentCreditChange = int(input("What is the new credit total of the student?"))
+        students[changeStudent-1] = studentCreditChange
+    elif choice == 5:
         running = False
     else:
         print("Choose a valid option")
