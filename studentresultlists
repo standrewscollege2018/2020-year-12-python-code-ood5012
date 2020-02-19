@@ -5,7 +5,11 @@
 #list for students
 def displayStudents():
     for i in range (0, len(students)):
-        print(i+1, students[i],"Credits:",creditTotal[i])
+        print(i+1, students[i],"Credits:",creditTotal[i],)
+def change(list):
+    changeStudent = int(input("What student do you want to change?(Use student number)"))
+    change = input("What is new name/total")
+    list[changeStudent-1] = change
 students = ["Lucas Kerry","Ollie Odlin","Zac Moore","Liam Blackmore","Jack Tansey"]
 creditTotal = [34,45,87,23,76]
 #Prints names of students
@@ -33,13 +37,9 @@ while running == True:
         else:
             print("Choose a valid student number")
     elif choice == 3:
-        changeStudent = int(input("What student do you want to change?(Use student number)"))
-        studentNameChange = input("What is the new name of the student?")
-        students[changeStudent-1] = studentNameChange
+        change(students)
     elif choice == 4:
-        changeStudent = int(input("What student do you want to change?(Use student number)"))
-        studentCreditChange = int(input("What is the new credit total of the student?"))
-        creditTotal[changeStudent-1] = studentCreditChange
+        change(creditTotal)
     elif choice == 5:
         running = False
     else:
