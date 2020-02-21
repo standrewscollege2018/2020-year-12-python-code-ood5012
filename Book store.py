@@ -91,6 +91,7 @@ while running == True:
 #If the price is being changed it must be an integer
         if changeFrom == 3:
             validOption = True
+#THis is to get a correct input
             while validOption == True:
                 try:
                     changeTo = int(input("What is the new price?"))
