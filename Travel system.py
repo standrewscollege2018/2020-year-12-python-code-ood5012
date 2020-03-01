@@ -22,5 +22,11 @@ nights_stay = int(input("How many nights would you like to stay?"))
 #Calculates price based on place and nights and then prints it
 price_flights = locations[location_choice-1][1]+departures[departure_choice-1][1]
 price_accommodation = locations[location_choice-1][2]*nights_stay
+#Constants for both discount and discount threshhold
+DISCOUNT_THRESHHOLD = 3
+DISCOUNT = 0.8
+#Calculate the discount if the nights staying is over 3
+if nights_stay >= DISCOUNT_THRESHHOLD:
+    price_accommodation = price_accommodation*DISCOUNT
 price = price_flights + price_accommodation
 print (price)
