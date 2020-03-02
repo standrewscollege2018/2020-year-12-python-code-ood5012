@@ -1,9 +1,8 @@
-#This is a programme to book flights and accomodation for a holiday
-#Oliver Odlin
-#27/2/2020
-
-#Function for error catching integer inputs, uses try and except to get an integer and in the correct range
+"""This program is used to book flights and accommodation for vacations"""
+"""Oliver Odlin"""
+"""03/03/20"""
 def error_catching (message,input_range_low,input_range_high):
+    """This function is for error catching integer inputs"""
     running = True
     while running == True:
         try:
