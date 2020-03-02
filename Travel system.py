@@ -2,6 +2,19 @@
 #Oliver Odlin
 #27/2/2020
 
+#Function for error catching integer inputs, uses try and except to get an integer and in the correct range
+def error_catching (message,input_range_low,input_range_high):
+    running = True
+    while running == True:
+        try:
+            user_input = int(input(message))
+            if user_input in range(input_range_low,input_range_high):
+                running = False
+            else:
+                print("Enter a valid number")
+        except:
+            print("Enter a valid number")
+    return user_input
 #This is a list for the location and the costs
 locations = [["Sydney",326,120],["Tonga",378,40],["Shanghai",1436,60],["London",2376,80]]
 #This list is for the departure locations of the passangers and cost to flight return from each
@@ -19,10 +32,10 @@ while running == True:
     for location in range(0,len(locations)):
         print(location+1,locations[location][0])
 #Asks for the departure location for the passanger
-    departure_choice = int(input("Where do you want to leave from(use index number)?"))
+    departure_choice = error_catching("Where do you want to leave from(use index number)?",0,len(departures))
 #Input for choosing what place you would like to travel to
-    location_choice = int(input("Where would you like to travel(use index number)?"))
-    nights_stay = int(input("How many nights would you like to stay?"))
+    location_choice = error_catching("Where would you like to travel(use index number)?",0,len(locations))
+    nights_stay = error_catching("How many nights would you like to stay?",1,122)
 #Calculates price based on place and nights and then prints it
     price_flights = locations[location_choice-1][1]+departures[departure_choice-1][1]
     price_accommodation = locations[location_choice-1][2]*nights_stay
@@ -39,7 +52,10 @@ while running == True:
     print ("After 3 night or over discount $",price_accommodation_after)
     print ("Total $",price)
 #Input for confirmation
-    confirmation = int(input("If you would like to confirm the trip enter 1, if you want to change enter 2."))
+    confirmation = error_catching("If you would like to confirm the trip enter 1, if you want to change enter 2.",1,3)
     if confirmation == 1:
         running = False
+        print("Your trip has been booked")
+    else:
+        print("Rebooking...")
     
